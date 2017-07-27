@@ -1,0 +1,25 @@
+
+    <div class="client-products">
+        <div class="row">
+            <div class="col-sm-12">
+                <h1>Dostępne projekty</h1>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-sm-4" *ngFor='let product of products'>
+                <div class="product" [routerLink]="['project', product.id]">
+                    <div class="product-label">
+                        <p>{{ product.name }}</p>
+                    </div>
+                    <div class="product-data product-icon product-space">
+                        <div class="row">
+                            <div class="col-sm-4" *ngFor='let value of product.values'>
+                                <h3> {{ value.number }} </h3>
+                                <h3> {{ value.unit }} </h3>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>

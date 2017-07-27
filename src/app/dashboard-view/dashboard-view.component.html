@@ -1,0 +1,20 @@
+
+<app-main-navbar></app-main-navbar>
+  <div class="sidebar">
+    <div class="search">
+      <input (keyup)= "searchTerm$.next($event.target.value)" type="text">
+    </div>
+      <div class="scroll-section">
+        <ul class="sidebar_list" *ngIf = "results">
+            <li *ngFor='let item of results'
+                class="sidebar_list-item"> <span>{{ item.body }}</span>
+                <ul class="sidebar_list">
+                    <li *ngFor='let item of results'
+                        class="sidebar_list-subitem"> <span>{{ item.title }}</span>
+                    </li>
+                </ul>
+            </li>
+        </ul>
+    </div>
+  </div>
+  <app-projects></app-projects>

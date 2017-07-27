@@ -1,0 +1,38 @@
+<div class="form-group">
+    <p>Zakres ogólny:</p>
+    <div class="choose">
+        <select 
+        [class.disableIt]= "active"
+        [(ngModel)]="selectedValue" 
+        (change)="getSelectValue(selectedValue)" 
+        id="select1">
+
+        <option *ngFor="let item of period"> {{ item }} </option>
+        </select>
+    </div>
+
+    <p>Zakres szczegółowy:</p>
+    <div class="choose">
+        <form #loginForm="ngForm" (ngSubmit)="updateCustomDate()">
+            <input 
+            [class.disableIt]= "active"
+            type="date" 
+            [(ngModel)]="setStartDate" 
+            [max]="start.endDate" 
+            (change)="getStartDate()"
+            name="startDate"
+            [required]="true">
+
+            <input 
+            type="date" 
+            [(ngModel)]="setEndDate" 
+            [min]="end.startDate"  
+            (change)="getEndDate()"
+            name="endDate" 
+            [required]="true">
+            <button type="submit" [disabled]="loginForm.invalid">Szukaj</button>
+        </form>
+    </div>
+    <p>Filtruj wyniki:</p>
+    <input type="text" [(ngModel)]="filterInput" (keyup)="filterResults(filterInput)">
+</div>

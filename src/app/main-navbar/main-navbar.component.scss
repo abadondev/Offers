@@ -1,0 +1,49 @@
+@import '../../variables';
+
+.menu {
+  box-shadow: 2px 2px 5px 0 rgba(0, 0, 0, 0.8);
+  background: $main-gray;
+  padding: 20px;
+  .addCLientSection {
+    float:right;
+  .addBtnLabel {
+    display:none;
+    color: #fff;
+    font-size:16px;
+    font-weight:500;
+    margin-right:20px;
+  }
+  .addBtn {
+    -webkit-transition: all 0.5s; /* Safari */
+    transition: all 0.5s;
+    display:inline-block;
+    vertical-align: middle;
+    background: #fff;
+    text-align:center;
+    width:50px;
+    height:50px;
+    box-shadow: 0 0 10px 0 rgba(0, 0, 0, 0.2);
+    border-radius: 10px;
+    cursor: pointer;
+    &:after {
+      content: '+';
+      display:inline-block;
+      color: $main-detail-color;
+      font-size:35px;
+      font-weight:400;
+    }
+    &:hover {
+      background: $main-detail-color;
+      &:after {
+        color: #fff;
+      }
+    }
+  }
+}
+.logo {
+  float:left;
+    img {
+      height: 50px;
+  }
+}
+}
