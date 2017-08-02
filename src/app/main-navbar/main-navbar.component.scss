@@ -1,49 +1,62 @@
 @import '../../variables';
-
 .menu {
-  box-shadow: 2px 2px 5px 0 rgba(0, 0, 0, 0.8);
-  background: $main-gray;
-  padding: 20px;
-  .addCLientSection {
-    float:right;
-  .addBtnLabel {
-    display:none;
-    color: #fff;
-    font-size:16px;
-    font-weight:500;
-    margin-right:20px;
-  }
-  .addBtn {
-    -webkit-transition: all 0.5s; /* Safari */
-    transition: all 0.5s;
-    display:inline-block;
-    vertical-align: middle;
-    background: #fff;
-    text-align:center;
-    width:50px;
-    height:50px;
-    box-shadow: 0 0 10px 0 rgba(0, 0, 0, 0.2);
-    border-radius: 10px;
-    cursor: pointer;
-    &:after {
-      content: '+';
-      display:inline-block;
-      color: $main-detail-color;
-      font-size:35px;
-      font-weight:400;
+    position: relative;
+    background: $main-gray;
+    padding: 20px;
+    .addCLientSection {
+        float: right;
+        .addBtnLabel {
+            display: none;
+            color: #fff;
+            font-size: 16px;
+            font-weight: 500;
+            margin-right: 20px;
+        }
+        .addBtn {
+            -webkit-transition: all 0.5s;
+            /* Safari */
+            transition: all 0.5s;
+            display: inline-block;
+            vertical-align: middle;
+            background: #fff;
+            text-align: center;
+            width: 50px;
+            height: 50px;
+            box-shadow: 0 0 10px 0 rgba(0, 0, 0, 0.2);
+            border-radius: 10px;
+            cursor: pointer;
+            &:after {
+                content: '+';
+                display: inline-block;
+                color: $main-detail-color;
+                font-size: 35px;
+                font-weight: 400;
+            }
+            &:hover {
+                background: $main-detail-color;
+                &:after {
+                    color: #fff;
+                }
+            }
+        }
     }
-    &:hover {
-      background: $main-detail-color;
-      &:after {
-        color: #fff;
-      }
+    #logOutButton {
+        display: inline-block;
+        padding: 5px;
+        position: absolute;
+        right: 0;
+        bottom: -30px;
+        -webkit-box-shadow: 0px 0px 5px 0px rgba(0, 0, 0, 0.55);
+        -moz-box-shadow: 0px 0px 5px 0px rgba(0, 0, 0, 0.55);
+        box-shadow: 0px 0px 5px 0px rgba(0, 0, 0, 0.55);
+        text-align: center;
+        color: #333333;
+        cursor: pointer;
     }
-  }
-}
-.logo {
-  float:left;
-    img {
-      height: 50px;
-  }
-}
+    .logo {
+        float: left;
+        img {
+            height: 50px;
+        }
+    }
 }

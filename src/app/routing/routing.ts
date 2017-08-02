@@ -4,6 +4,6 @@ import { DashboardViewComponent } from '../dashboard-view/dashboard-view.compone
 import { ClientViewComponent } from '../client-view/client-view.component';
 
   export const routesConfig:Routes = [
-    { path: 'dashboard', component: DashboardViewComponent  },//tutaj trzeba dodac canActivate: [AuthGuard]
+    //{ path: 'dashboard', component: DashboardViewComponent  },//tutaj trzeba dodac canActivate: [AuthGuard]
   ]
   export const routerModule = RouterModule.forRoot(routesConfig)

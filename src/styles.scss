@@ -3,7 +3,7 @@
 @import 'app/main-navbar/main-navbar.component';
 @import 'app/auth-view/auth-view.component';
 @import 'app/dashboard-view/dashboard-view.component';
-@import 'app/projects/projects.component';
+@import 'app/dashboard-view/projects/projects.component';
 @import 'app/client-view/client-view.component';
 @import 'app/start-end-date/start-end-date.component';
 html {
@@ -46,7 +46,7 @@ body {
 }
 
 ::-webkit-scrollbar-thumb:window-inactive {
-    background: $main-detail-color
+    background: $main-detail-color;
 }
 
 .container {
@@ -87,5 +87,35 @@ body {
 .scroll-section {
     overflow-y: scroll;
     height: 100%;
+}
+
+input,
+select,
+button {
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    border: none;
+    border-radius: 0;
+    border: 1px solid gray;
+    background: none;
+    &:focus {
+        outline: none;
+    }
+    &:disabled {
+        pointer-events: none!important;
+        background: #f5f5f5!important;
+        color: #cccccc;
+        border: 1px solid #f5f5f5;
+    }
+}
+
+.formButton {
+    background: $main-detail-color;
+    padding: 5px 0;
+    width: 100px;
+    color: #fff;
+    text-align: center;
+    font-weight: 800;
+    margin: 20px 0;
 }
 

@@ -1,0 +1,20 @@
+.projects {
+    background: #fff;
+    width: calc(100% - 300px);
+    float: left;
+    height: 100%;
+}
+
+.infoBar {
+    background: #c2c2c2;
+    text-align: center;
+    padding: 5px 0;
+    h3 {
+        color: #333333;
+        font-weight: 800;
+    }
+}
+
+.projectContainer {
+    padding: 50px;
+}

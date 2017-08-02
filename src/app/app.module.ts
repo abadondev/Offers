@@ -1,4 +1,4 @@
-import { Ng2FilterPipeModule } from 'ng2-filter-pipe';
+import { routerDashboard } from './dashboard-view/dashboard.routing';
 import { TimeService } from './shared/services/time.service';
 import { ClientService } from './shared/services/clients.service';
 import { HttpClientService } from './HttpClientService/http-client-service.service';
@@ -13,11 +13,9 @@ import { AuthService } from './shared/services/auth.service';
 import { SearchService } from './shared/services/search.service';
 import { DashboardViewComponent } from './dashboard-view/dashboard-view.component';
 import { routerModule } from './routing/routing';
-import { routerModal } from './modal/modal.routing';
 import { routerAuth } from './auth-view/auth.routing';
 import { routerClientView } from './client-view/client-view.routing';
-import { ProjectsComponent } from './projects/projects.component';
-import { ModalComponent } from './modal/modal.component';
+import { ProjectsComponent } from './dashboard-view/projects/projects.component';
 import { AuthViewComponent } from './auth-view/auth-view.component';
 import { LoginComponent } from './auth-view/login/login.component';
 import { RegisterComponent } from './auth-view/register/register.component';
@@ -29,6 +27,9 @@ import { ClientViewProjectDetailsComponent } from './client-view/client-view-pro
 import { StartEndDateComponent } from './start-end-date/start-end-date.component';
 import { CustomFilterPipe } from './custom-filter-pipe/custom-filter.pipe';
 import { ClientViewAllProjectsComponent } from './client-view/client-view-all-projects/client-view-all-projects.component';
+import { ProjectStepFirstComponent } from './dashboard-view/projects/project-step-first/project-step-first.component';
+import { ProjectStepSecondComponent } from './dashboard-view/projects/project-step-second/project-step-second.component';
+import { ProjectStepThirdComponent } from './dashboard-view/projects/project-step-third/project-step-third.component';
 
 
 @NgModule({
@@ -36,7 +37,6 @@ import { ClientViewAllProjectsComponent } from './client-view/client-view-all-pr
     AppComponent,
     DashboardViewComponent,
     ProjectsComponent,
-    ModalComponent,
     AuthViewComponent,
     LoginComponent,
     RegisterComponent,
@@ -47,17 +47,19 @@ import { ClientViewAllProjectsComponent } from './client-view/client-view-all-pr
     ClientViewProjectDetailsComponent,
     StartEndDateComponent,
     CustomFilterPipe,
-    ClientViewAllProjectsComponent
+    ClientViewAllProjectsComponent,
+    ProjectStepFirstComponent,
+    ProjectStepSecondComponent,
+    ProjectStepThirdComponent
     ],
   imports: [
     BrowserModule,
     FormsModule,
     HttpModule,
     routerModule,
-    routerModal,
     routerAuth,
     routerClientView,
-    Ng2FilterPipeModule
+    routerDashboard
   ],
   providers: [AuthService, SearchService, ClientService, AuthGuard, HttpClientService, TimeService],
   bootstrap: [AppComponent]

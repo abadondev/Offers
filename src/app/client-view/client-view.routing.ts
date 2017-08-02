@@ -1,3 +1,4 @@
+import { AuthGuard } from './../guards/auth.guard';
 import { ClientViewAllProjectsComponent } from './client-view-all-projects/client-view-all-projects.component';
 import { ClientViewComponent } from './client-view.component';
 import { RouterModule, Routes } from '@angular/router';
@@ -6,12 +7,12 @@ import { ClientViewProjectComponent } from './client-view-project/client-view-pr
 
 export const routesConfig: Routes = [
   {
-    path: 'client', component: ClientViewComponent, pathMatch: "prefix", children: [
+    path: 'client', component: ClientViewComponent, pathMatch: "prefix", canActivate: [AuthGuard], children: [
       { path: '', component: ClientViewAllProjectsComponent },
       { path: 'project/:id', component: ClientViewProjectComponent },
       { path: 'project/:id/details/:id', component: ClientViewProjectDetailsComponent }
     ]
-  },
+  }
 ]
 
 export const routerClientView = RouterModule.forRoot(routesConfig)

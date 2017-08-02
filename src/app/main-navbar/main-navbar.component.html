@@ -4,7 +4,8 @@
   </div>
   <div appSetNavbar class="addCLientSection">
     <span  class="addBtnLabel">Dodaj klienta</span>
-    <a routerLink="project" class="addBtn"></a>
+    <a [routerLink]="['project']" class="addBtn"></a>
   </div>
   <div class="clear"></div>
+  <div id="logOutButton" (click)="logOut()">wyloguj</div>
 </div>
