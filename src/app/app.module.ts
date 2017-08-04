@@ -5,9 +5,9 @@ import { HttpClientService } from './HttpClientService/http-client-service.servi
 import { AuthGuard } from './guards/auth.guard';
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
-import { FormsModule } from '@angular/forms';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { HttpModule } from '@angular/http';
-import {Observable} from 'rxjs/Observable';
+import { Observable } from 'rxjs/Observable';
 import { AppComponent } from './app.component';
 import { AuthService } from './shared/services/auth.service';
 import { SearchService } from './shared/services/search.service';
@@ -30,6 +30,7 @@ import { ClientViewAllProjectsComponent } from './client-view/client-view-all-pr
 import { ProjectStepFirstComponent } from './dashboard-view/projects/project-step-first/project-step-first.component';
 import { ProjectStepSecondComponent } from './dashboard-view/projects/project-step-second/project-step-second.component';
 import { ProjectStepThirdComponent } from './dashboard-view/projects/project-step-third/project-step-third.component';
+import playlistData from './playlist.data';
 
 
 @NgModule({
@@ -51,17 +52,30 @@ import { ProjectStepThirdComponent } from './dashboard-view/projects/project-ste
     ProjectStepFirstComponent,
     ProjectStepSecondComponent,
     ProjectStepThirdComponent
-    ],
+  ],
   imports: [
     BrowserModule,
     FormsModule,
     HttpModule,
+    ReactiveFormsModule,
     routerModule,
     routerAuth,
     routerClientView,
     routerDashboard
   ],
-  providers: [AuthService, SearchService, ClientService, AuthGuard, HttpClientService, TimeService],
+  providers: [AuthService, SearchService, ClientService, AuthGuard, HttpClientService, TimeService,
+    {
+      provide: "KurczakExtension", useValue: playlistData
+    },
+        {
+      provide: "Kurczak", useFactory: (data) => {
+        console.log('kurczak data', data);
+        data.push({name: "Franek"})
+        return data;
+      }, deps: ["KurczakExtension"]
+    }
+
+  ],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

@@ -1,6 +1,8 @@
 <form  (ngSubmit) = "register()" class="register-form">
-  <input type="text" placeholder="email" (ngModel)] = "credentials.email" name='email'/>
-  <input type="password" placeholder="haslo" (ngModel)] = "credentials.password" name='password'/>
+    <input type="text" placeholder="name" [(ngModel)] = "credentials.name" name='name'/>
+  <input type="text" placeholder="surname" [(ngModel)] = "credentials.surname" name='surname'/>
+  <input type="text" placeholder="email" [(ngModel)] = "credentials.email" name='email'/>
+  <input type="password" placeholder="haslo" [(ngModel)] = "credentials.password" name='password'/>
   <button type='submit'>utwórz</button>
   <p class="message">Jesteś zarejestrowany?<a routerLink = '/login'> Zaloguj się</a></p>
 </form>

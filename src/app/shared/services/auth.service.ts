@@ -1,4 +1,4 @@
-import { LOGIN_URL } from './../../../config';
+import { LOGIN_URL, REGISTER_URL } from './../../../config';
 import { Injectable } from '@angular/core';
 import { Http, Response, Headers, RequestOptions } from '@angular/http';
 import { JwtHelper } from 'angular2-jwt';
@@ -32,6 +32,11 @@ export class AuthService {
           sessionStorage.setItem('user_role', this.user_role)
         };
       })
+  }
+
+    register(email, password, firsttName, lastName) {
+    return this.http.post(REGISTER_URL, { email, password, firsttName, lastName }, this.options)
+
   }
 
   isLoggedIn() {

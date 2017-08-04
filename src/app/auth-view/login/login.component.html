@@ -1,7 +1,7 @@
 
-      <form (ngSubmit) = "login()" class="login-form">
-        <input type="text" [(ngModel)] = "credentials.email" placeholder="email" name='email'/>
-        <input type="password" [(ngModel)] = "credentials.password" placeholder="haslo" name='password'/>
-        <button type='submit'>login</button>
+      <form [formGroup]="searchForm" (ngSubmit) = "login()" class="login-form">
+        <input type="text"  placeholder="email" formControlName='email'/>
+        <input type="password" placeholder="haslo" formControlName='password'/>
+        <button type='submit' [disabled]="searchForm.invalid">login</button>
         <p class="message">Nie masz konta? <a routerLink = '/register'> Utwórz je teraz</a></p>
       </form>
